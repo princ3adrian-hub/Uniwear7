@@ -14,7 +14,7 @@ public class Paguirigan_MiniPeta1 {
         // --- 2. THE OUTPUT (Printing to the console) ---
         System.out.println("--- MY DIGITAL PROFILE! ---");
         System.out.println("Hello! My name is " + myName + " and i am " + myAge + " years old");
-        System.out.println("I have a wonderful cat named " + petName + " . ");
+        System.out.println("I have a wonderful cat named " + petName + ".");
         System.out.println("And I am a student at the school " + School + ".");
 
 
