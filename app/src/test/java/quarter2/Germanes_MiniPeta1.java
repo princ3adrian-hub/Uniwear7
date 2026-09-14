@@ -13,8 +13,8 @@ public class Germanes_MiniPeta1 {
 
         //---2. THE OUTPUT(Printing to the console)---
         System.out.println("--- MY DIGITAL PROFILE--");
-        System.out.println("Hello my name is " + myName + "myfavorite teacher is" + favTeacher + "!");
-        System.out.println("My Favorite Classmate from my class is" + favClassmate + "!");
+        System.out.println("Hello my name is " + myName + "my favorite teacher is " + favTeacher + "!");
+        System.out.println("My Favorite Classmate from my class is " + favClassmate + "!");
 
     }
 }
