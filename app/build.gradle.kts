@@ -40,3 +40,13 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
 }
+
+tasks.register<JavaExec>("runPaguiriganOrders") {
+    group = "application"
+    description = "Runs Paguirigan_BrowsingAndSelectingOrders main method"
+    mainClass.set("com.example.quarter2.MiniPeta3.Paguirigan_BrowsingAndSelectingOrders")
+    val testTask = tasks.named<Test>("testDebugUnitTest")
+    dependsOn(testTask)
+    classpath = testTask.get().classpath
+    standardInput = System.`in`
+}
