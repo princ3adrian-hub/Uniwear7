@@ -8,9 +8,6 @@ public class GymMenu {
 
         boolean lifting = true;
 
-        // ==========================================
-        // GYM WELCOME SCREEN
-        // ==========================================
 
         System.out.println();
         System.out.println("╔══════════════════════════════════════════════╗");
@@ -34,9 +31,7 @@ public class GymMenu {
 
             switch (input) {
 
-                // ==========================================
-                // ENTER GYM
-                // ==========================================
+
 
                 case "1":
 
@@ -52,9 +47,7 @@ public class GymMenu {
 
                     System.out.println();
 
-                    // ==========================================
-                    // TRAINER MENU
-                    // ==========================================
+
 
                     System.out.println("╔══════════════════════════════════════════════╗");
                     System.out.println("║             🏆 PREMIUM SERVICES              ║");
@@ -74,9 +67,6 @@ public class GymMenu {
 
                         String tierInput = scanner.nextLine().trim();
 
-                        // ==========================================
-                        // HIRE TRAINER
-                        // ==========================================
 
                         if (tierInput.equals("1")) {
 
@@ -113,9 +103,7 @@ public class GymMenu {
 
                         }
 
-                        // ==========================================
-                        // NO TRAINER
-                        // ==========================================
+
 
                         else if (tierInput.equals("2")) {
 
@@ -157,6 +145,37 @@ public class GymMenu {
 
                     break;
 
+                case "3":
+
+                    System.out.println();
+                    System.out.println("╔══════════════════════════════════════════════╗");
+                    System.out.println("║             🔒 SESSION CLOSED                ║");
+                    System.out.println("╠══════════════════════════════════════════════╣");
+                    System.out.println("║                                              ║");
+                    System.out.println("║       Thank you for visiting Rutor           ║");
+                    System.out.println("║              Fitness Center!                 ║");
+                    System.out.println("║                                              ║");
+                    System.out.println("║       💪 KEEP GRINDING, ATHLETE! 💪          ║");
+                    System.out.println("║                                              ║");
+                    System.out.println("╚══════════════════════════════════════════════╝");
+
+                    lifting = false;
+                    break;
+
+
+                default:
+
+                    System.out.println();
+                    System.out.println("╔══════════════════════════════════════════════╗");
+                    System.out.println("║              ⚠ INVALID OPTION                ║");
+                    System.out.println("╠══════════════════════════════════════════════╣");
+                    System.out.println("║                                              ║");
+                    System.out.println("║   Please enter a valid menu option.          ║");
+                    System.out.println("║                                              ║");
+                    System.out.println("╚══════════════════════════════════════════════╝");
+                    System.out.print("➜ Try again: ");
+
+                    break;
             }
         }
     }
