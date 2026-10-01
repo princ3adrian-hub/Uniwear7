@@ -9,4 +9,4 @@ public class Rutor_MiniPeta3 {
 
         // Holds the combined text layout of the final receipt details
         String orderSummary;
-}
+    }}
