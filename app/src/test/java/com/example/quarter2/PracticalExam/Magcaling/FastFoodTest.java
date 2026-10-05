@@ -3,7 +3,7 @@ package com.example.quarter2.PracticalExam.Magcaling;
 import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
-
+//iuyguyghb
 public class FastFoodTest {
 
     @Test
