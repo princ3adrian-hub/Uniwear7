@@ -1,7 +1,7 @@
 package com.example.quarter2.PracticalExam.Magcaling;
 
 import java.util.Scanner;
-
+//foodmenu
 public class FastFoodMenu {
 
     public static void subMenu() {
