@@ -1,7 +1,7 @@
 package com.example.quarter2.MiniPeta3;
 
 public class Magcaling_ComputeTotalAndConfirmOrder {
-
+//minipeta
     // Stores the calculated total cost of the selected items.
     double totalPrice;
 
