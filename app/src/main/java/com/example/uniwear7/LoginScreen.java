@@ -1,5 +1,6 @@
 package com.example.uniwear7;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,22 +56,8 @@ public class LoginScreen extends AppCompatActivity {
         });
 
         registerButton.setOnClickListener(v -> {
-            String email = emailInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
-
-            if (email.isEmpty()) {
-                emailInput.setError("Please enter your email to register");
-                emailInput.requestFocus();
-                return;
-            }
-
-            if (password.isEmpty()) {
-                passwordInput.setError("Please enter your password to register");
-                passwordInput.requestFocus();
-                return;
-            }
-
-            Toast.makeText(LoginScreen.this, "Account registered successfully!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginScreen.this, RegistrationScreen.class);
+            startActivity(intent);
         });
     }
 }
