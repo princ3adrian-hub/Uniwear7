@@ -17,9 +17,28 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Loadingscreen"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
+    <?xml version="1.0" encoding="utf-8"?>
+
+<activity
+
+android:exported="false"
+android:name=".LoginScreen" />
+<activity
+android:name=".Loadingscreen"
+android:exported="true">
+<intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+</activity>
