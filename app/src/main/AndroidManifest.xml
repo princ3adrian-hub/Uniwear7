@@ -36,6 +36,13 @@
             android:name=".DashBoardScreen"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ProductsCatalogActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
+<activity
+android:name=".ProductsCatalogActivity"
+android:exported="false" />
