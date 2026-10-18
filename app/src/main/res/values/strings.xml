@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Uniwear7</string>
     <string name="smart_style_everyday">SMART STYLE. EVERYDAY.</string>
+    <string name="welcome_user">Welcome, %1$s!</string>
+    <string name="default_welcome">Welcome, Juan!</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="search_uniforms_hint">Search uniforms…</string>
+    <string name="items_available">Items Available</string>
+    <string name="browse_uniforms_desc">Browse our list of uniforms</string>
+    <string name="view_items">View Items</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_orders_desc">View your order history</string>
+    <string name="profile">Profile</string>
+    <string name="profile_desc">Manage your account</string>
+    <string name="logout">Logout</string>
+    <string name="cd_notification_bell">Notification bell</string>
+    <string name="cd_uniform">Uniform</string>
 </resources>
