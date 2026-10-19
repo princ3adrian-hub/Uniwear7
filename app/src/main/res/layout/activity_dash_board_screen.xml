@@ -8,7 +8,7 @@
     android:background="#FAFAFC"
     android:padding="20dp"
     tools:context=".DashBoardScreen">
-
+/
     <!-- Top Header: Dashboard Title & Bell Icon -->
     <TextView
         android:id="@+id/dashboardTitle"
