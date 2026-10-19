@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Product Image (placeholder) -->
+
+        <!-- Product Name -->
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Polo Shirt"
+            android:scaleType="centerInside"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:srcCompat="@drawable/img_2" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Polo Shirt - White"
+            android:textSize="20sp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="₱350.00"
+            android:textSize="22sp"
+            android:textColor="#1565C0"
+            android:textStyle="bold" />
+
+        <!-- Size Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_gravity="start"
+            android:text="Size"
+            android:textSize="16sp"
+            android:textColor="#333333" />
+
+        <!-- Size Buttons -->
+        <LinearLayout
+            android:id="@+id/layoutSizes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btnXS"
+                style="@style/SizeButton"
+                android:text="XS" />
+
+            <TextView
+                android:id="@+id/btnS"
+                style="@style/SizeButton"
+                android:text="S" />
+
+            <TextView
+                android:id="@+id/btnM"
+                style="@style/SizeButtonSelected"
+                android:text="M" />
+
+            <TextView
+                android:id="@+id/btnL"
+                style="@style/SizeButton"
+                android:text="L" />
+
+            <TextView
+                android:id="@+id/btnXL"
+                style="@style/SizeButton"
+                android:text="XL" />
+        </LinearLayout>
+
+        <!-- Quantity Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_gravity="start"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:textColor="#333333" />
+
+        <!-- Quantity Controls -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/btnMinus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_quantity_btn"
+                android:gravity="center"
+                android:text="−"
+                android:textSize="24sp"
+                android:textColor="#1565C0"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="20sp"
+                android:textColor="#222222"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnPlus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_quantity_btn"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="24sp"
+                android:textColor="#1565C0"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#1565C0"
+            android:text="🛒  Add to Cart"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</ScrollView>
