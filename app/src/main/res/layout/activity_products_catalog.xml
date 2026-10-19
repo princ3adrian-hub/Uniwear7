@@ -1,0 +1,196 @@
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F8FC"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textSize="32sp"
+            android:textColor="#173B83"
+            android:contentDescription="Back"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Items Available"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#173B83" />
+
+        <TextView
+            android:id="@+id/cartButton"
+            android:layout_width="72dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="🛒 0"
+            android:textSize="17sp"
+            android:contentDescription="Shopping cart"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- Search bar -->
+    <EditText
+        android:id="@+id/searchInput"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/search_background"
+        android:hint="Search items..."
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:contentDescription="Search products" />
+
+    <!-- Category filters -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:scrollbars="none"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/categoryAll"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="All"
+                android:textAllCaps="false"
+                android:contentDescription="Show all products" />
+
+            <Button
+                android:id="@+id/categoryTop"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="Top"
+                android:textAllCaps="false"
+                android:contentDescription="Show top clothing" />
+
+            <Button
+                android:id="@+id/categoryBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="Bottom"
+                android:textAllCaps="false"
+                android:contentDescription="Show bottom clothing" />
+
+            <Button
+                android:id="@+id/categoryAccessories"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:minHeight="48dp"
+                android:minWidth="48dp"
+                android:text="Accessories"
+                android:textAllCaps="false"
+                android:contentDescription="Show accessories" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Scrollable product list -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/productContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp" />
+
+    </ScrollView>
+
+    <!-- Bottom navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:text="⌂ Home"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#173B83"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="Home" />
+
+        <Button
+            android:id="@+id/navOrders"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:text="My Orders"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#777777"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="My Orders" />
+
+        <Button
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:text="Profile"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#777777"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="Profile" />
+
+    </LinearLayout>
+
+</LinearLayout>
