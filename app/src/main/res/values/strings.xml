@@ -15,4 +15,27 @@
     <string name="logout">Logout</string>
     <string name="cd_notification_bell">Notification bell</string>
     <string name="cd_uniform">Uniform</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_cart">Shopping Cart</string>
+    <string name="search_items_hint">Search items…</string>
+    <string name="cat_all">All</string>
+    <string name="cat_top">Top</string>
+    <string name="cat_bottom">Bottom</string>
+    <string name="cat_accessories">Accessories</string>
+    <string name="polo_shirt">Polo Shirt</string>
+    <string name="white">White</string>
+    <string name="price_350">₱350.00</string>
+    <string name="pe_shirt">PE Shirt</string>
+    <string name="blue">Blue</string>
+    <string name="price_300">₱300.00</string>
+    <string name="skirt">Skirt</string>
+    <string name="navy_blue">Navy Blue</string>
+    <string name="price_450">₱450.00</string>
+    <string name="tie">Tie</string>
+    <string name="school_tie">School Tie</string>
+    <string name="price_150">₱150.00</string>
+    <string name="socks">Socks</string>
+    <string name="white_socks">White Socks</string>
+    <string name="price_80">₱80.00</string>
+    <string name="nav_home">Home</string>
 </resources>
