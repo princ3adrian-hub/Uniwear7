@@ -21,3 +21,4 @@ public class DashBoardScreen extends AppCompatActivity {
             return insets;
         });
     }
+}
