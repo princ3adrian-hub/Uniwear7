@@ -52,7 +52,7 @@ public class RegistrationScreen extends AppCompatActivity {
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailInput.setError("Please enter a valid email address");
+            emailInput.setError("Please enter a valid email address (e.g. user@example.com)");
             emailInput.requestFocus();
             return;
         }
