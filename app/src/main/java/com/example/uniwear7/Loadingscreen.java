@@ -7,7 +7,11 @@ import android.os.Looper;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class Loadingscreen extends AppCompatActivity {
 
@@ -19,7 +23,14 @@ public class Loadingscreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_loadingscreen);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         loadingProgress = findViewById(R.id.loadingProgress);
         loadingText = findViewById(R.id.loadingText);
@@ -32,21 +43,24 @@ public class Loadingscreen extends AppCompatActivity {
             while (progressStatus < 100) {
                 progressStatus += 2;
                 handler.post(() -> {
-                    loadingProgress.setProgress(progressStatus);
-                    loadingText.setText("Loading... " + progressStatus + "%");
+                    if (loadingProgress != null) {
+                        loadingProgress.setProgress(progressStatus);
+                    }
+                    if (loadingText != null) {
+                        loadingText.setText("Loading... " + progressStatus + "%");
+                    }
                 });
                 try {
-                    Thread.sleep(50); // Total loading time ~2.5 seconds
+                    Thread.sleep(30);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
-            // Transition to LoginScreen after loading reaches 100%
             handler.post(() -> {
                 Intent intent = new Intent(Loadingscreen.this, LoginScreen.class);
                 startActivity(intent);
-                finish(); // Close LoadingScreen so user cannot return to it via back button
+                finish();
             });
         }).start();
     }
