@@ -101,7 +101,7 @@
             android:text="Quantity"
             android:textSize="16sp"
             android:textColor="#333333" />
-/
+
         <!-- Quantity Controls -->
         <LinearLayout
             android:layout_width="wrap_content"

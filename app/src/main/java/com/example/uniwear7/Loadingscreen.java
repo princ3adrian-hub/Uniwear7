@@ -1,4 +1,3 @@
-
 package com.example.uniwear7;
 
 import android.content.Intent;
@@ -14,60 +13,41 @@ public class Loadingscreen extends AppCompatActivity {
 
     private ProgressBar loadingProgress;
     private TextView loadingText;
-
-    private final Handler handler =
-            new Handler(Looper.getMainLooper());
-
-    private int progress = 0;
-
-    private final Runnable loadingRunnable = new Runnable() {
-        @Override
-        public void run() {
-
-            progress += 2;
-
-            loadingProgress.setProgress(progress);
-            loadingText.setText("Loading... " + progress + "%");
-
-            if (progress < 100) {
-
-                handler.postDelayed(this, 60);
-
-            } else {
-
-                loadingText.setText("Welcome to UniWear!");
-
-                handler.postDelayed(() -> {
-                    Intent intent = new Intent(
-                            Loadingscreen.this,
-                            LoginScreen.class
-                    );
-
-                    startActivity(intent);
-                    finish();
-
-                }, 400);
-            }
-        }
-    };
+    private int progressStatus = 0;
+    private final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_loadingscreen);
 
         loadingProgress = findViewById(R.id.loadingProgress);
         loadingText = findViewById(R.id.loadingText);
 
-        loadingProgress.setProgress(0);
-
-        handler.postDelayed(loadingRunnable, 100);
+        startLoading();
     }
 
-    @Override
-    protected void onDestroy() {
-        handler.removeCallbacks(loadingRunnable);
-        super.onDestroy();
+    private void startLoading() {
+        new Thread(() -> {
+            while (progressStatus < 100) {
+                progressStatus += 2;
+                handler.post(() -> {
+                    loadingProgress.setProgress(progressStatus);
+                    loadingText.setText("Loading... " + progressStatus + "%");
+                });
+                try {
+                    Thread.sleep(50); // Total loading time ~2.5 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // Transition to LoginScreen after loading reaches 100%
+            handler.post(() -> {
+                Intent intent = new Intent(Loadingscreen.this, LoginScreen.class);
+                startActivity(intent);
+                finish(); // Close LoadingScreen so user cannot return to it via back button
+            });
+        }).start();
     }
 }

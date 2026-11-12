@@ -1,6 +1,7 @@
 package com.example.uniwear7;
 
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,8 +17,6 @@ public class RegistrationScreen extends AppCompatActivity {
     private EditText emailInput;
     private EditText passwordInput;
     private EditText confirmPasswordInput;
-    private Button registerButton;
-    private Button backToLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,42 +33,49 @@ public class RegistrationScreen extends AppCompatActivity {
         emailInput = findViewById(R.id.regEmailInput);
         passwordInput = findViewById(R.id.regPasswordInput);
         confirmPasswordInput = findViewById(R.id.regConfirmPasswordInput);
-        registerButton = findViewById(R.id.submitRegisterButton);
-        backToLoginButton = findViewById(R.id.backToLoginButton);
+        Button registerButton = findViewById(R.id.submitRegisterButton);
+        Button backToLoginButton = findViewById(R.id.backToLoginButton);
 
-        registerButton.setOnClickListener(v -> {
-            String email = emailInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
-            String confirmPassword = confirmPasswordInput.getText().toString().trim();
-
-            if (email.isEmpty()) {
-                emailInput.setError("Please enter your email");
-                emailInput.requestFocus();
-                return;
-            }
-
-            if (password.isEmpty()) {
-                passwordInput.setError("Please enter your password");
-                passwordInput.requestFocus();
-                return;
-            }
-
-            if (confirmPassword.isEmpty()) {
-                confirmPasswordInput.setError("Please confirm your password");
-                confirmPasswordInput.requestFocus();
-                return;
-            }
-
-            if (!password.equals(confirmPassword)) {
-                confirmPasswordInput.setError("Passwords do not match");
-                confirmPasswordInput.requestFocus();
-                return;
-            }
-
-            Toast.makeText(RegistrationScreen.this, "Account registered successfully!", Toast.LENGTH_SHORT).show();
-            finish(); // Return to login screen
-        });
-
+        registerButton.setOnClickListener(v -> validateAndRegister());
         backToLoginButton.setOnClickListener(v -> finish());
+    }
+
+    private void validateAndRegister() {
+        String email = emailInput.getText().toString().trim();
+        String password = passwordInput.getText().toString().trim();
+        String confirmPassword = confirmPasswordInput.getText().toString().trim();
+
+        if (email.isEmpty()) {
+            emailInput.setError("Please enter your email");
+            emailInput.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailInput.setError("Please enter a valid email address (e.g. user@example.com)");
+            emailInput.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            passwordInput.setError("Please enter your password");
+            passwordInput.requestFocus();
+            return;
+        }
+
+        if (confirmPassword.isEmpty()) {
+            confirmPasswordInput.setError("Please confirm your password");
+            confirmPasswordInput.requestFocus();
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            confirmPasswordInput.setError("Passwords do not match");
+            confirmPasswordInput.requestFocus();
+            return;
+        }
+
+        Toast.makeText(this, "Account registered successfully!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }
